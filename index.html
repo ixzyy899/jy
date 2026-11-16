@@ -45,7 +45,7 @@ header {
     width: 100%;
     z-index: 1000;
     padding: 20px 8%;
-    background: rgba(8,8,8,.85);
+    background: rgba(8,8,8,.88);
     backdrop-filter: blur(15px);
     border-bottom: 1px solid #ffffff12;
 }
@@ -84,6 +84,7 @@ header {
     display: none;
     font-size: 25px;
     cursor: pointer;
+    color: white;
 }
 
 /* HERO */
@@ -285,17 +286,31 @@ section {
     height: 390px;
     overflow: hidden;
     background: #202020;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .project-image img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain;
+    display: block;
     transition: .5s;
 }
 
 .project-card:hover img {
-    transform: scale(1.05);
+    transform: scale(1.04);
+}
+
+/* ERROR IMAGE */
+
+.project-image.image-error::after {
+    content: "Gambar tidak ditemukan. Periksa nama file.";
+    color: #aaa;
+    font-size: 13px;
+    text-align: center;
+    padding: 20px;
 }
 
 .project-info {
@@ -421,14 +436,17 @@ footer p {
         font-size: 43px;
     }
 }
+
 </style>
 </head>
 
 <body>
 
 <!-- NAVBAR -->
+
 <header>
     <nav class="navbar">
+
         <a href="#home" class="logo">IXZY.</a>
 
         <div class="menu-toggle" id="menuToggle">☰</div>
@@ -439,13 +457,19 @@ footer p {
             <li><a href="#skills">Keahlian</a></li>
             <li><a href="#projects">Galeri Karya</a></li>
         </ul>
+
     </nav>
 </header>
 
 <!-- HERO -->
+
 <section class="hero" id="home">
+
     <div class="hero-content reveal">
-        <div class="small-title">PORTOFOLIO PRIBADI</div>
+
+        <div class="small-title">
+            PORTOFOLIO PRIBADI
+        </div>
 
         <h1>
             CREATIVE<br>
@@ -459,6 +483,7 @@ footer p {
         </p>
 
         <div class="hero-buttons">
+
             <a href="#projects" class="btn btn-primary">
                 LIHAT KARYA →
             </a>
@@ -466,32 +491,48 @@ footer p {
             <a href="#about" class="btn">
                 KENALI SAYA ↓
             </a>
+
         </div>
+
     </div>
+
 </section>
 
 <!-- ABOUT -->
+
 <section class="about" id="about">
+
     <div class="about-content">
 
         <div class="reveal">
-            <div class="section-label">01 / TENTANG SAYA</div>
-            <h2 class="section-title">Perkenalan singkat.</h2>
+
+            <div class="section-label">
+                01 / TENTANG SAYA
+            </div>
+
+            <h2 class="section-title">
+                Perkenalan singkat.
+            </h2>
 
             <p class="section-desc">
                 Saya percaya desain yang baik bukan hanya terlihat
                 menarik, tetapi juga mampu menyampaikan pesan
                 dengan jelas.
+
                 <br><br>
+
                 Saya Julian Ikhsan, seorang desainer grafis
                 yang senang mengeksplorasi ide, warna, tipografi,
                 dan komposisi. Saya terus belajar untuk
                 menghasilkan karya yang kreatif dan berkualitas.
             </p>
+
         </div>
 
         <div class="about-box reveal">
+
             <h3>JULIAN IKHSAN.</h3>
+
             <p>
                 GRAPHIC DESIGNER<br>
                 CREATIVE THINKER<br>
@@ -499,20 +540,32 @@ footer p {
                 Berfokus pada kreativitas, detail,
                 dan estetika dalam setiap karya.
             </p>
+
         </div>
 
     </div>
+
 </section>
 
 <!-- SKILLS -->
+
 <section id="skills">
+
     <div class="reveal">
-        <div class="section-label">02 / KEAHLIAN</div>
-        <h2 class="section-title">Creative abilities.</h2>
+
+        <div class="section-label">
+            02 / KEAHLIAN
+        </div>
+
+        <h2 class="section-title">
+            Creative abilities.
+        </h2>
+
         <p class="section-desc">
             Beberapa bidang yang saya minati dan terus kembangkan
             dalam dunia desain grafis.
         </p>
+
     </div>
 
     <div class="skills-grid">
@@ -542,81 +595,141 @@ footer p {
         </div>
 
     </div>
+
 </section>
 
 <!-- PROJECTS -->
+
 <section class="projects" id="projects">
 
     <div class="reveal">
-        <div class="section-label">03 / GALERI KARYA</div>
-        <h2 class="section-title">Selected projects.</h2>
+
+        <div class="section-label">
+            03 / GALERI KARYA
+        </div>
+
+        <h2 class="section-title">
+            Selected projects.
+        </h2>
+
         <p class="section-desc">
             Kumpulan beberapa karya desain yang saya buat
             sebagai bentuk eksplorasi kreativitas.
         </p>
+
     </div>
 
     <div class="project-grid">
 
         <!-- PROJECT 1 -->
+
         <div class="project-card reveal">
+
             <div class="project-image">
-                <img src="project-1.png"
-                     alt="Porsche GT3 RS Design">
+
+                <img
+                    src="/jy/project-1.png"
+                    alt="Porsche GT3 RS Design"
+                    loading="lazy"
+                    onerror="this.style.display='none';this.parentElement.classList.add('image-error');"
+                >
+
             </div>
 
             <div class="project-info">
-                <div class="project-number">PROJECT 01</div>
+
+                <div class="project-number">
+                    PROJECT 01
+                </div>
+
                 <h3>Porsche GT3 RS</h3>
+
                 <p>
                     Automotive poster design dengan
                     perpaduan warna biru, tipografi,
                     dan komposisi visual modern.
                 </p>
+
             </div>
+
         </div>
 
         <!-- PROJECT 3 -->
+
         <div class="project-card reveal">
+
             <div class="project-image">
-                <img src="project-3.png"
-                     alt="Porsche Carrera Design">
+
+                <img
+                    src="/jy/project-3.png"
+                    alt="Porsche Carrera Design"
+                    loading="lazy"
+                    onerror="this.style.display='none';this.parentElement.classList.add('image-error');"
+                >
+
             </div>
 
             <div class="project-info">
-                <div class="project-number">PROJECT 03</div>
+
+                <div class="project-number">
+                    PROJECT 03
+                </div>
+
                 <h3>Porsche Carrera</h3>
+
                 <p>
                     Desain poster otomotif dengan konsep
                     minimalis, elegan, dan klasik.
                 </p>
+
             </div>
+
         </div>
 
         <!-- PROJECT 4 -->
+
         <div class="project-card reveal">
+
             <div class="project-image">
-                <img src="project-4.png"
-                     alt="Ford Mustang Design">
+
+                <img
+                    src="/jy/project-4.png"
+                    alt="Ford Mustang Design"
+                    loading="lazy"
+                    onerror="this.style.display='none';this.parentElement.classList.add('image-error');"
+                >
+
             </div>
 
             <div class="project-info">
-                <div class="project-number">PROJECT 04</div>
+
+                <div class="project-number">
+                    PROJECT 04
+                </div>
+
                 <h3>Ford Mustang</h3>
+
                 <p>
                     Eksplorasi desain otomotif dengan
                     tipografi besar dan komposisi
                     visual yang berani.
                 </p>
+
             </div>
+
         </div>
 
     </div>
+
 </section>
 
 <!-- FOOTER -->
+
 <footer>
-    <div class="footer-logo">IXZY.</div>
+
+    <div class="footer-logo">
+        IXZY.
+    </div>
 
     <p>
         © 2026 Julian Ikhsan. All Rights Reserved.
@@ -625,11 +738,13 @@ footer p {
     <p>
         DESIGNED WITH CREATIVITY.
     </p>
+
 </footer>
 
 <script>
 
 // MOBILE MENU
+
 const menuToggle = document.getElementById("menuToggle");
 const navLinks = document.getElementById("navLinks");
 
@@ -638,6 +753,7 @@ menuToggle.addEventListener("click", () => {
 });
 
 // CLOSE MENU AFTER CLICK
+
 document.querySelectorAll(".nav-links a").forEach(link => {
     link.addEventListener("click", () => {
         navLinks.classList.remove("show");
@@ -645,12 +761,18 @@ document.querySelectorAll(".nav-links a").forEach(link => {
 });
 
 // SCROLL ANIMATION
+
 const observer = new IntersectionObserver((entries) => {
+
     entries.forEach(entry => {
+
         if (entry.isIntersecting) {
             entry.target.classList.add("active");
+            observer.unobserve(entry.target);
         }
+
     });
+
 }, {
     threshold: 0.12
 });
@@ -662,4 +784,5 @@ document.querySelectorAll(".reveal").forEach(element => {
 </script>
 
 </body>
-</html>
+    </html>
+                           
